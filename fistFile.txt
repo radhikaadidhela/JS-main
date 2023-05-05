@@ -2,4 +2,5 @@ This is Radhika
 
 Git init
 Git clone https://github.com/radhikaadidhela/JS-main.git
+git add .
 
