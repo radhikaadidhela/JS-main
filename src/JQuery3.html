@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JQuery </title>
+     </head>
+     <body>
+        <div id="addContent1">Add Content Using JQuery Append/prepend methods.</div>
+        <div>
+            <button id="appendc">Append Content</button>
+            <button id="prependc">Prepend Content</button>
+        </div>
+        <div id="addContent2">Add Content Using JQuery After/Before methods.</div>       
+        <div>
+            <button id="afterc">After Content</button>
+            <button id="beforec">Before Content</button>
+        </div>    
+
+        <div id="addContent3">Remove or Empty Content Using JQuery Remove/Empty methods.</div>  
+        <div>     
+            <button id="removec">Remove Content</button>
+            <button id="emptyc">Empty Content</button>
+        </div>
+
+        <div>
+            <div id="singleCss">Adding single Property CSS Method</div>
+            <button id="single">Single css</button>
+        </div>
+        
+        <div>
+            <div id="multiCss">Adding Multiple Css Property Method</div>
+            <button id="multiple">Multiple Css</button>
+        </div>
+
+        <div>
+            <div id="singleAdd">Adding class</div>
+           
+            <button id="singleAddId">Add Class</button>
+            <button id="removeC">Remove Class</button>
+            <button id="toggleC">Toggle Class</button>
+        </div>
+
+       
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function(){
+
+                //append, prepend, after, before
+                $("#appendc").click(function(){
+                    $("#addContent1").append("APPENDING content Through Append method");
+                });
+                $("#prependc").click(function(){
+                    $("#addContent1").prepend("Prepending content Through prepend method");
+                });
+                $("#afterc").click(function(){
+                    $("#addContent2").after("Adding After content Through after method");
+                });
+                $("#beforec").click(function(){
+                    $("#addContent2").before("Adding Before content Through before method");
+                });
+
+                //remove,empty
+                $("#removec").click(function(){
+                    $("#addContent3").remove();
+                });
+                $("#emptyc").click(function(){
+                    $("#addContent3").empty();
+                });
+                 
+                //css- single and multiline
+                $("#single").click(function(){
+                    $("#singleCss").css("background-color","orange");
+                });
+                $("#multiple").click(function(){
+                    $("#multiCss").css({"color":"red", "background-color":"orange"});
+                });
+
+                //addclass,removeclass,toggleclass
+                $("#singleAddId").click(function(){
+                    $("#singleAdd").addClass("single second");
+                });
+                $("#removeC").click(function(){
+                    $("#singleAdd").removeClass("single second");
+                });
+                $("#toggleC").click(function(){
+                    $("#singleAdd").toggleClass("single second");
+                });
+
+                
+                //css
+
+                //width
+
+                //height
+
+                //innerwidth
+
+                //innerheight
+
+                //outerwidth
+
+                //outerheight
+
+                //Traversing - Parent, Parents,ParentsUntil
+
+                //Traversing -Descendants find,
+
+                //Traversing - siblings - siblings,next,nextall,nextuntil,prev,prevall,prevuntil
+
+                //noconflicts
+
+                //Traversing -filtering-filter
+
+                //filters
+
+            })
+            
+
+           
+
+        </script>
+
+     </body>   
+</html>

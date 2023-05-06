@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Callback functions</title>
+    </head>
+    <body>
+        <h3>Call back functions, Asynchrounous, SetTimeout,setInterval,window sizes:</h3>
+        <p id="callback1"></p>
+        <p id="callback2"></p>
+        <p id="timeout1"></p>
+        <p id="timeout2"></p>
+        <p id="timeint1"></p>
+
+        <button onClick="myHistoryBackFun()">History Back</button>
+        <button onClick="myHistoryForwardFun()">History Forward</button>
+
+        <button onClick="myAlert()">Alert</button>
+        <button onClick="myConfirm()">Confirm </button>
+        <button onClick="myPrompt()">Prompt </button>
+        <p id="myConfirmTest"></p>
+        <p id="myPromptTest"></p>
+        <script>
+            //Callback-1
+            function myfunction1(num1,num2){
+                let sum=num1+num2;
+                myfunction2(sum);
+            }
+            function myfunction2(sum){
+                document.getElementById("callback1").innerHTML=sum;
+            }
+            myfunction1(5,5);
+
+            //Callback-2
+            function myfunction3(num1,num2,mytest){
+                let sum=num1+num2;
+                mytest(sum);
+            }
+            function myfunction4(sum){
+                document.getElementById("callback2").innerHTML=sum;
+            }
+            myfunction3(5,5,myfunction4);
+
+            //Asynchronous,synchronous, setTimeout, setInterval
+
+            setTimeout(myFunction5,3000);
+            function myFunction5(){
+                document.getElementById("timeout1").innerHTML="Welcome to JS";   
+            }
+
+            setTimeout(function myFunction6(){ myFunction7("Welcome to Java Script");},3000);
+            function myFunction7(text){
+                document.getElementById("timeout2").innerHTML=text;   
+            }
+
+            function myFunction8(){
+                let d=new Date();
+                let h=d.getHours();
+                let m=d.getMinutes();
+                let s=d.getSeconds();
+                let time = h+":"+m+":"+s;
+                document.getElementById("timeint1").innerHTML=time;  
+                console.log("US Time"+d.toLocaleString("en-US")+"</br>");
+            }
+
+            setInterval(myFunction8,1000);
+
+            //Window screen
+
+            document.write("</br> window screen width: "+ screen.width);
+            document.write("</br> window screen height: "+ screen.height);
+            document.write("</br> window screen availHeight: "+ screen.availHeight);
+            document.write("</br> window screen availWidth: "+ screen.availWidth);
+           
+            document.write("</br> window  innerwidth: "+ window.innerWidth);
+            document.write("</br> window  innerHeight: "+ window.innerHeight);
+
+            document.write("</br> window window.location : "+ window.location);
+            document.write("</br> window.location.href : "+ window.location.href);
+            document.write("</br> window.location.hostname : "+ window.location.hostname);
+            document.write("</br> window.location.pathname : "+ window.location.pathname);
+            document.write("</br> window.location.protocol : "+ window.location.protocol);
+            document.write("</br> window.location.assign : "+ window.location.assign());
+
+            //JS History Methods
+           
+            function myHistoryBackFun(){
+                window.history.back();
+            }
+
+            function myHistoryForwardFun(){
+                window.history.forward();
+            }
+
+            //Popup Boxes
+
+            function myAlert(){
+                window.alert("Window Alert test");
+            }
+            function myConfirm(){
+                if(window.confirm("Click to OK button")){
+                    document.getElementById("myConfirmTest").innerHTML="User confirmed by clicking OK button";
+                }else{
+                    document.getElementById("myConfirmTest").innerHTML="User cancelled by clicking Cancel or close confirm window";
+                }
+            }
+            function myPrompt(){
+                let text;
+                let name=prompt("Please Enter Your Name : ","");
+                if(name=='Mahi'){
+                    text = "Hello "+name+ " How are you today!";
+                    document.getElementById("myPromptTest").innerHTML=text;
+                }else{
+                    window.location.href="https://google.com";
+                }
+                
+            }
+
+        </script>
+    </body>
+</html>

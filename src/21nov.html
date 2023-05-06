@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Form examples</title>
+        <style>
+            *{
+                padding-bottom: 5px;
+            }
+
+            body { 
+                width: 1200px;
+                margin: 0px auto;
+            }
+               form {
+                 text-align: center ;
+                 padding: 10px 20px 5px 10px;
+                
+               }
+               label{
+                display:block;
+                text-align: left;
+                
+               }
+
+               input[type="password"]
+               {
+                background-color: aquamarine;
+
+               }
+
+               input,select, textarea
+               {
+               
+                background: #fff;
+                border:1px solid #ccc;
+                color:blue;
+                width:100%;
+               }
+
+               input[type="submit"]
+               {
+                background-color: bisque;
+                width:fit-content;
+               }
+
+               .button
+               {
+                padding: 10px 20px;
+                border: 1px solid #ccc;
+                background: blue;
+                color:#fff;
+                font-size:18px;
+                border-radius: 15px 0px;
+                
+               }
+
+               a{
+                text-decoration: none;
+               }
+
+               .succ
+               {
+                background-color: red;
+               }
+               .warn{
+                background-color: green;
+               }
+               .diff
+               {
+                background: blueviolet;
+               }
+
+               .adjust{
+                width:130px;
+               }
+
+
+
+        </style>
+    </head>
+    <body>
+        <form>
+            <h2>CSS form</h2>
+            <div>
+               <label>First Name</label>
+               <input type="text" name="fname" placeholder="Enter your frist name">
+            </div>
+            <div>
+                <label>Last Name</label>
+                <input type="text" name="lname" placeholder="Enter your last name">
+             </div>
+             <div>
+                <label>Email</label>
+                <input type="email" name="Email" placeholder="Enter your email">
+             </div>
+             <div>
+                  <label>Password</label>
+                  <input type="password" placeholder="Enter your password">
+             </div>
+             <div>
+                <label>Select Your Country</label>
+                <select name="country">
+                    <option value="Usa">USA</option>
+                    <option value="india">India</option>
+                    <option value="Canada">Canada</option>
+                </select>
+             </div>
+            
+             <div>
+                <label>Message</label>
+                <textarea placeholder="Enter message here"></textarea>
+             </div>
+
+            <div>
+                <input type="submit" value="Save">
+            </div>
+
+        </form>
+
+
+        <h2>Button Use Cases</h2>
+
+        <button class="button suc"> Button </button>
+        <a class="button diff" href="#" >Link button</a>
+        <input class="button warn adjust" type="button" value="Input button">
+
+
+
+
+    </body>
+</html>

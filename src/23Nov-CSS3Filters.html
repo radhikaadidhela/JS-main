@@ -1,0 +1,166 @@
+<html>
+    <head>
+        <title>CSS3 Filter examples</title>
+     </head>
+     <style>
+        img{
+            height:300;
+            width:200;
+            border:1;
+         }
+         .blur{
+            filter:blur(1px);
+         }
+         .brightness{
+            filter:brightness(50%);
+        }
+        .contrast{
+            filter:contrast(50%);
+        }
+        .sepia{
+            filter:sepia(50%);
+        }
+        .saturation{
+            filter:saturate(50%);
+        }
+        .drop-shadow{
+            filter:drop-shadow(10px 10px 5px red);
+        }
+        .grayscale{
+            filter:grayscale(50%)
+        }
+        .opacity{
+            filter:opacity(50%)
+        }
+        .invert{
+            filter: invert(40%);
+        }
+
+        .pagination li{
+            display: inline;
+        }
+        .pagination li a{
+            color: black;
+            float: left;
+            padding:8px 16px;
+            text-decoration: none;
+        }
+        .pagination li a:hover{
+            color: blueviolet;
+            
+        }
+
+        .tooltip{
+            position:relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
+        .tooltip .tooltiptext{
+            visibility: hidden;
+            width:120px;
+            background-color: green;
+            color: #fff;
+            text-align: center;
+            border-radius: 10px;
+            padding: 10px 0;
+            position:absolute;
+            z-index: 1;
+        }
+        .tooltip:hover .tooltiptext{
+            visibility: visible;
+        }
+
+        div{
+            width:100px;
+            height: 100px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            position: absolute;
+        }
+
+        .div1{
+            background: yellow;
+        }
+        .div2{
+            background: red;
+            z-index: 2;
+        }
+        .div3{
+            background: gray;
+        }
+        .div4{
+            background: green;
+        }
+
+     </style>
+     
+     
+     <body>
+        
+        <h1>Original Image </h1>
+        <img src="images/butterfly.jpeg" >
+
+        <h1>blur Image </h1>
+        <img src="images/butterfly.jpeg"  class="blur">
+
+        <h1>brightness Image </h1>
+        <img src="images/butterfly.jpeg"  class="brightness">
+
+        <h1>contrast Image </h1>
+        <img src="images/butterfly.jpeg"  class="contrast">
+
+        <h1>sepia Image </h1>
+        <img src="images/butterfly.jpeg"  class="sepia">
+
+        <h1>saturation Image </h1>
+        <img src="images/butterfly.jpeg" class="saturation">
+
+        <h1>drop-shadow Image </h1>
+        <img src="images/butterfly.jpeg" class="drop-shadow">
+
+        <h1>grayscale Image </h1>
+        <img src="images/butterfly.jpeg" class="grayscale">
+
+        <h1>Opacity Image </h1>
+        <img src="images/butterfly.jpeg" class="opacity">
+
+        <h1>Invert Image </h1>
+        <img src="images/butterfly.jpeg" class="invert">
+
+
+        <h1>CSS Pagination</h1>
+        
+            <ul class="pagination">
+                <li><a href="">Previous</a> </li>
+                <li><a href="">1</a> </li>
+                <li><a href="">2</a> </li>
+                <li><a href="">3</a> </li>
+                <li><a href="">4</a> </li>
+                <li><a href="">5</a> </li>
+                <li><a href="">Next</a> </li>
+            </ul>
+
+        <br>
+            
+        <h1>CSS Tool Tip</h1>
+           
+            <div class="tooltip"> Hover Over 
+                <span class="tooltiptext">Tooltip Text</span>
+            </div>
+    
+
+          
+                <h1>CSS Z-Index</h1>
+           
+                <div class="div1"> First </div>
+                <div class="div2"> Second </div>
+                <div class="div3"> Third </div>
+                <div class="div4"> Fourth </div>
+        
+
+          
+        
+     </body>
+</html>     

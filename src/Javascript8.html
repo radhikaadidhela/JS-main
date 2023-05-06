@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM</title>
+    </head>
+    <body>
+        <h3>DOM - DOM - Document Object Model</h3>
+        <p id="intro">Finding HTML Elements by Id</p>
+        <p id ="demo"></p>
+
+        <div id="add"></div>
+
+        <button onclick="myFun()">Find</button>
+
+        <h3>Header 3</h3>
+        <h3>Header 3</h3>
+        <h3>Header 3</h3>
+
+        <p class="para"></p>
+        <p class="para"></p>
+        <p class="para"></p>
+        <p class="para"></p>
+
+        <p class="intro">Hellow World!</p>
+        <p class="intro">This example demonstrates the <b>Queryselectorall()</b> method</p>
+        <p id="demo1"></p>
+
+        <input type="number" name="mynum" id="mynum" class="form-control" placeholder"Enter number">
+        <button onclick="myFun2()">Submit</button>
+        <p id="helptext"></p>
+
+        <h2 onclick="changeText(this)">Click On this Text!</h2>
+
+        <p id="result"></p>
+        <button id="mybtn">try now</button>
+
+        <div id="test" onmouseover="mover()" onmouseout="mout()">Mouse move</div>
+
+        <script>
+            //Writing one para into other para element dynamically
+            var element = document.getElementById("intro");
+            document.getElementById("demo").innerHTML=element.innerHTML;
+
+            //myFun
+            function myFun(){
+                let myElem= document.getElementById("add");
+                myElem.innerHTML="Added this text into div element";
+                alert(myElem);
+
+                let myTagElement=document.getElementsByTagName("h3");
+                alert(myTagElement);
+                myTagElement[2].innerHTML="This content is being added to h3 tag of list[2]";
+
+                //
+                let myTagPElement=document.getElementsByClassName("para");
+                alert(myTagPElement);
+                myTagPElement[2].innerHTML="This content is being added to p tag of list[2]";
+            }
+
+            //CSS Selectors
+
+            const x = document.querySelectorAll("p.intro");
+            document.getElementById("demo1").innerHTML="The first para index[0] with class intro is "+x[1].innerHTML;
+
+            //HTML Forms
+
+            function myFun2(){
+                var text='';
+                let myNum=document.getElementById("mynum").value;
+                
+                if(myNum>10){
+                    text+="You entered " + myNum;
+                    document.getElementById("helptext").innerHTML=text;
+                    document.getElementById("helptext").style.color="red";
+                    document.getElementById("mynum").style.border="5px solid green";
+                }else{
+                    text+="Please enter greater than 10";
+                    document.getElementById("helptext").innerHTML=text;
+                    document.getElementById("helptext").style.color="green";
+                }
+            }
+
+            function changeText(id){
+                id.innerHTML="Oops!";
+            }
+
+            document.getElementById("mybtn").onclick=myFun3;
+            function myFun3(){
+                document.getElementById("result").innerHTML=Date();
+            }
+
+            let obj=document.getElementById("test");
+            function mout(){
+                obj.innerHTML="Mouse overed to th div";
+            }
+
+            function mover(){
+                obj.innerHTML="Mouse moved to the Div";
+            }
+        </script>
+
+    </body>
+</html>

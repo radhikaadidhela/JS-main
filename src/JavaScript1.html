@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Javasript Program</title>
+    
+</head>
+<body>
+<h2 id="myid">Welcome to Javascript</h2>
+
+<script src="JS/external.js">
+    //calling external JS file
+
+</script>
+<button onclick="alert('onclick function')">Input</button><br>
+
+
+
+
+<script>
+    myFunc();
+    /* calling the external file and enabling the function
+        and excuting the function*/
+    document.write("<br>welcome to JS function SUM = " + (4+5));
+    console.log("Checking console log for debug SUM = " + (4+5));
+    document.getElementById("myid").innerHTML="Welcome to my JS";//replacing the content in h2 with console content
+    document.write("test"+"Sum="+(2+3));
+</script>  
+
+<h1>Day 2 Java script</h1>
+<p id="testday_2"></p>
+<p id="functiontest"></p>
+<h2 id="letTest"></h2>
+<h3 id="printArr"></h3>
+
+  <script>  
+
+    //Variables, Local,Global Variables
+     var testVar = "This is for variable testing";
+     document.getElementById('testday_2').innerHTML=testVar;
+
+     function myFunction(){
+        var name="local variable";
+        document.write(name);
+        document.getElementById('functiontest').innerHTML=name;
+     }
+
+     myFunction();
+     document.write(testVar);
+     console.log(testVar);
+
+
+    //Let and Const keywords
+    let testLet = "This is to test let variable";
+        testLet = "This is to test let variable1";
+    document.getElementById('letTest').innerHTML=testLet;
+
+    //const     
+    const a=20;
+    console.log(a);
+   // const a=30;  //constant cannot be overridden
+
+    
+    //Primitive Data Types - Number,String, boolean
+    var a1=20;
+    var a2=30.00;
+    var abc="primitive string";
+    let a3=50;
+    document.write("<br/>"+ (a1+a2));
+    document.write("<br/>"+abc);
+    document.write("<br/>"+(a2>a1));
+
+    //Non Primitive Data Types - Obejct,Array,RegExp,Function
+
+    var arr=[10,"radhi",40,'Mahi'];
+    var arr2=Array(10,"radhi",40,'Mahi');
+    document.write(arr[1]);
+   console.log(arr2[3]);
+
+    let arr3=[10,"radhi",40,'Mahi'];
+    let arr4=Array(10,"radhi",40,'Mahi');
+    document.write(arr3[1]);
+    console.log(arr4[3]);
+    document.getElementById("printArr").innerHTML=arr4;
+
+    //Special Data Types - Undefined,null.
+    var c;
+    console.log(c);
+    var d = null;
+    console.log(d);
+
+    let e;
+    console.log(e);
+    var f=null;
+    console.log(f);
+
+</script>
+
+
+
+</body>
+</html>

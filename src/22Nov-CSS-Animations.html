@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS3 Animation examples</title>
+        <style>
+           div{
+            height: 200px;
+            width: 200px;
+            background-color: rebeccapurple;
+            animation-name: example;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-delay: 1s;
+            animation-direction: alternate-reverse;
+           }
+           .square{
+            animation-timing-function: linear;
+
+           }
+
+           .square1{
+            animation-timing-function: ease;
+           }
+
+           .square2{
+            animation-timing-function: ease-in;
+           }
+           .square3{
+            animation-timing-function: ease-out;
+           }
+
+
+           @keyframes example{
+            0%{background-color: rgb(179, 226, 151);left: 0px;top:30px}
+            25%{background-color: rgb(153, 51, 63);left: 0px;top:40px}
+            50%{background-color: rgb(51, 153, 87);left: 0px;top:50px}
+            75%{background-color: rgb(44, 13, 13);left: 0px;top:60px}
+            100%{background-color: rebeccapurple;left: 0px;top:80px}
+            
+           }
+
+           @keyframes example{
+            from{left:0px}
+            to{left: 300px}
+           }
+        </style>
+
+    </head>
+    <body>
+    
+    <div class="square"></div>
+    <div class="square1"></div>
+    <div class="square2"></div>
+    <div class="square3"></div>
+       
+
+    </body>
+</html>   

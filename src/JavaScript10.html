@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web APIs</title>
+    </head>
+    <body>
+        <h3>Web APIs</h3>
+        
+
+        <h2>Validation API Examples:</h2>
+
+        <h2>Web Forms API Examples:</h2>
+        <input type="number" min="10" max="50" id="mynum" required>
+
+        <!--check validate methods for above input-->
+        <h4 id="checkValidate"></h4>
+        <button onclick="checkValidate()">CHECK VALIDATE</button>
+        
+        <!--Check validate remaining methods for above input-->
+        <div id="res"></div>
+        <button onclick="myfun()">Try Now</button>
+
+        <h2>Web Storage API Examples:</h2>
+        <input type="text" id="name" name="name">
+        <input type="email" name="email" id="email">
+        <h4 id="localStorage"></h4>
+        <h4 id="localStorage1"></h4>
+        <h4 id="localStorage2"></h4>
+        <button onclick="myLocalStorage()">Local Storage </button>
+
+        <button onclick="myLocalStorageRemove()">Local Storage Remove</button>
+
+        <button onclick="myLocalStorageClear()">Local Storage Clear</button>
+
+        <h4 id="SessionStorage"></h4>
+        <h4 id="SessionStorage1"></h4>
+        <h4 id="SessionStorage2"></h4>
+
+        <button onclick="mySessionStorage()">Session Storage </button>
+
+        <button onclick="mySessionStorageRemove()">Session Storage Remove</button>
+
+        <button onclick="mySessionStorageClear()">Session Storage Clear</button>
+
+
+        <h2>Web Fetch API Examples:</h2>
+        <p id="fetchFile">Fetch a File to Change this text</p>
+        
+
+        <h2>Web Geolocation API</h2>
+        <button onclick="getCurrentLocation()">Get Current Location</button>
+        <h3 id="mylocation"></h3>
+
+        <h2>Web History Back/Forward APIs</h2>
+        <button onclick="myBrowserHistory()">Go Back</button>
+        <button onclick="history.back()">Go Back</button>
+        <button onclick="history.forward()">Go Forward</button>
+        <button onclick="history.go(-2)">Go Back 2 Pages</button>
+
+
+        <script>
+            //API stands for Application Programming Interface.
+            //A Web API is an application programming interface for the Web.
+            //A Browser API can extend the functionality of a web browser.
+            //A Server API can extend the functionality of a web server.
+            
+            //Web Validation APIs
+            function checkValidate() {
+                const inpObj = document.getElementById("mynum");
+                if (!inpObj.checkValidity()) {
+                  document.getElementById("checkValidate").innerHTML = inpObj.validationMessage;
+                }
+              }
+              
+
+            function myfun(){
+                //let myVal=document.getElementById("mynum").value;
+                //customError,patternMismatch,stepMismatch,tooLong,typeMismatch,valid,rangeUnderflow,rangeOverflow,valueMissing
+                if(document.getElementById("mynum").validity.rangeOverflow){
+                    document.getElementById("res").innerHTML="Given Input Range is More";
+                }
+                else if(document.getElementById("mynum").validity.rangeUnderflow){
+                    document.getElementById("res").innerHTML="Given Input Range is Lower";
+                }
+                else if(document.getElementById("mynum").validity.valueMissing){
+                    document.getElementById("res").innerHTML="Please Enter Valid Input";
+                }
+                console.log(document.getElementById("mynum"));
+            }  
+            
+            //Web Local Storage APIs
+            function myLocalStorage(){
+                let name = document.getElementById("name").value;
+                let email = document.getElementById("email").value;
+                
+                localStorage.setItem("Name",name);
+                localStorage.setItem("Email",email);
+
+                let getName=localStorage.getItem("Name");
+                let getEmail=localStorage.getItem("Email");
+
+                document.getElementById("localStorage").innerHTML="Local Storage Name: "+getName+" Local Storage Email: "+getEmail;
+
+            }
+
+            function myLocalStorageRemove(){
+                localStorage.removeItem("Email");
+
+                let getName1=localStorage.getItem("Name");
+                let getEmail1=localStorage.getItem("Email");
+                document.getElementById("localStorage1").innerHTML="Local Storage Name: "+getName1+" Local Storage Email: "+getEmail1;
+                
+            }
+
+            function myLocalStorageClear(){
+                localStorage.clear();
+                let getName2=localStorage.getItem("Name");
+                let getEmail2=localStorage.getItem("Email");
+                document.getElementById("localStorage2").innerHTML="Local Storage Name: "+getName2+" Local Storage Email: "+getEmail2;
+
+            }
+
+            //Web Session Storage APIs
+            function mySessionStorage(){
+                let name = document.getElementById("name").value;
+                let email = document.getElementById("email").value;
+                
+                sessionStorage.setItem("Name",name);
+                sessionStorage.setItem("Email",email);
+
+                let getName=sessionStorage.getItem("Name");
+                let getEmail=sessionStorage.getItem("Email");
+
+                document.getElementById("SessionStorage").innerHTML="Session Storage Name: "+getName+" Local Storage Email: "+getEmail;
+
+            }
+
+            function mySessionStorageRemove(){
+                sessionStorage.removeItem("Email");
+
+                let getName1=sessionStorage.getItem("Name");
+                let getEmail1=sessionStorage.getItem("Email");
+                document.getElementById("SessionStorage1").innerHTML="Session Storage Name: "+getName1+" Session Storage Email: "+getEmail1;
+                
+            }
+
+            function mySessionStorageClear(){
+                sessionStorage.clear();
+                let getName2=sessionStorage.getItem("Name");
+                let getEmail2=sessionStorage.getItem("Email");
+                document.getElementById("SessionStorage2").innerHTML="Session Storage Name: "+getName2+" Session Storage Email: "+getEmail2;
+
+            }
+
+            //Web Fetch File APIs
+            let file="sample.txt";
+            fetch(file)
+            .then(x => x.text())
+            .then(y => document.getElementById("fetchFile").innerHTML=y);
+
+             //Web GeoLocation APIs
+             function  getCurrentLocation(){
+                if(navigator.geolocation){
+                    //callback method below
+                    navigator.geolocation.getCurrentPosition(showLocations);
+                }
+             }
+             function showLocations(position){
+                document.getElementById("mylocation").innerHTML= "Current Location Latitude: "+position.coords.latitude+" Longitude: "+position.coords.longitude; 
+
+             }
+
+             function showError(error){
+                let x =document.getElementById("mylocation");
+                switch(error.code){
+                    case error.PERMISSIONDENIED:
+                        x.innerHTML="User Denied the request";
+                        break;
+                    case error.POSITION_UNAVAILABLE:  
+                        x.innerHTML="Location info UnAvailable"; 
+                        break;
+                    case error.TIMEOUT:  
+                        x.innerHTML="Timed Out"; 
+                        break;
+                    case error.UNKNOWN_ERROR:  
+                        x.innerHTML="Unknown error"; 
+                        break;            
+                }
+             }
+
+
+             //Web APIs history back     
+             function myBrowserHistory(){
+                window.history.back();
+             }        
+           
+        </script>
+
+    </body>
+</html>

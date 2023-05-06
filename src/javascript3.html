@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javasript Events and Form Events</title>   
+    </head>
+    <body>
+        <h1>HTML Javascript Events</h1>
+        <div> 
+            <p id="but1"></p>
+            <button onclick="onclickfunc()" >OnClick Event Button</button> 
+            </br></br>
+        </div>
+        <div> 
+            <p id="but2"></p>
+            <button oncontextmenu="onrightclick()">OnContextMenu Button</button> 
+            </br></br>
+        </div>
+        <div> 
+            <p id="but3"></p>
+            <button onmouseover="onmouseoverfun()">OnMouseOver Button</button> 
+            </br></br>
+        </div>
+        <div> 
+            <p id="but4"></p>
+            <button onmouseout="mouseoutfun()">OnMouseOut Button</button>
+            </br></br> 
+        </div>
+
+        <!--JS Keyboard Events- On Key down, On Key press, On Key up -->
+        <h1>HTML Javascript Keyboard Events</h1>
+        <div>   
+            <p id="input1"></p>
+            <label>On Key down Input</label>
+            <input type="text" onkeydown="alert('This is onkeydown')" >
+            </br></br> 
+        </div>
+        <div> 
+            <p id="input2"></p>
+            <label>On Key press Input</label>
+            <input type="text" onkeypress="alert('This is onkeypress')" >
+            </br></br> 
+        </div>
+        <div> 
+            <p id="input3"></p>
+            <label>On Key up Input</label>
+            <input type="text" onkeyup="alert('This is onkeyup')" >
+            </br></br> 
+        </div>
+
+        <h1>HTML Javascript Form Events</h1>
+
+        <div>
+            <form action="/test.php" onsubmit="return onsubmitfunc()" method="post">
+                <div>
+                    <Lable> First Name</Lable>
+                    <input type="text" value="" placeholder="Enter First Name Here" onfocus="onfocusfunc(this)" id="fname" name="fname">
+                    <div id="myonfocus">
+
+                    </div>
+
+                    <p id="ferror"></p>
+                    
+                </div>
+                <div>
+                    <Lable>Last Name </Lable>
+                    <input type="text" value="" placeholder="Enter Last Name Here" onblur="onblurfunc(this)" id="lname" name="lname">
+                    <div id="myonblur"></div>
+                    <p id="lerror"></p>
+                </div>
+
+                <div>
+                    <Lable> City</Lable>
+                    <input type="text" value="" placeholder="Enter City Here" onclick="onclickfunc(this)">
+                    <div id="myonclick"></div>
+                </div>
+                <div>
+                    <Lable> Email</Lable>
+                    <input type="email" value="" placeholder="Enter Email Here" onreset="onresetfunc(this)" >
+                    <div id="myonreset"></div>
+                </div>
+                <div>
+                    <div id="myonchange"></div>
+                    <label>Select Options</label>
+                    <select onchange="onchangefunc(this)"> 
+                        <option >1</option>
+                        <option >2</option>
+                        <option >3</option>
+                        <option >4</option>
+                        <option >5</option>
+                   </select>
+                </div>
+                <div>
+                    <input type="Submit" value="Submit" >
+                </div>
+            </form>
+        </div>
+
+        <script>
+           function onclickfunc(){
+               document.getElementById("but1").innerHTML="This is onclick function";
+            }
+            function onrightclick(){
+                document.getElementById("but2").innerHTML="This is for right click event";
+            }
+            function onmouseoverfun(){
+               // document.write("This is for ");
+                document.getElementById("but3").innerHTML="This is for mouseover";
+                console.log("This is for mouseover");
+            }
+            function mouseoutfun(){
+                document.getElementById("but4").innerHTML="This is for mouseout";
+                console.log("This is for mouseout");
+            }
+            function onfocusfunc(elm){
+                elm.style.background="orange";
+                elm.style.border="5px red solid";
+                document.getElementById("myonfocus").innerHTML="This is for onfocus";
+            }
+            function onblurfunc(elm1){
+                elm1.style.background="yellow";
+                elm1.style.border="3px green dotted";
+                document.getElementById("myonblur").innerHTML="This is for onblur event";
+            }
+            function onclickfunc(elm2){
+                elm2.style.background="light green";
+                elm2.style.border="6px orange striped";
+                document.getElementById("myonclick").innerHTML="This is for onclick event";
+            }
+            function onchangefunc(elm3){
+                elm3.style.font="italic";
+                console.log("onchange event");
+            }
+            function onsubmitfunc(){
+                var a=10;
+                var b=10;
+                var c="please enter last name";
+                var fname = document.getElementById("fname").value;
+                var lname = document.getElementById("lname").value;
+                if((fname==""||fname==null)&&(lname==""||lname==null)){
+                   // alert("Please enter first and last name"+(a+b));
+                   document.getElementById("ferror").innerHTML="please enter first name";
+                   document.getElementById("lerror").innerHTML=c;
+                    return false;
+                }else
+                {
+                    return true;
+                }
+               
+
+            }
+        </script>
+
+    </body>
+</html>
