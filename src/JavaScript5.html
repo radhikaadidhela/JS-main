@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Array Functions</title>
+    </head>
+    <body>
+        <h2>Arrays</h2>
+        <h2 id="foreach">Document For Each: </h2>
+        <script>
+            var array1 =['Radhika',35,1986];
+            var array2=Array('Radhika',23,544);
+            var array3=new Array('Girl',56,567);
+            var array4={
+                name:"Radhika",
+                city:"Plano",
+                country:"USA",
+                phone:4695122362
+            }
+            array1[0]="Mahi";
+            array1[3]="Radhika";
+       
+            array2[3]="Radhika";
+            document.write("Array Data "+array1+" Array Length : "+ (array1.length-1)
+            + "Is array function: "+Array.isArray(array1)+"</br>");
+            document.write(array2+"</br>");
+            document.write(array3+"</br>");
+            document.write(array4+"</br>");
+            console.log(array1);
+            console.log(array2);
+            console.log(array3);
+            console.log(array4);
+            for(var i=0; i<array1.length; i++){
+                document.write(array1[i]+"</br>");
+            }
+            for(var i=1;i<array2.length;i++){
+                document.write(array2[i]+"</br>");
+            }
+            
+            //Pop,Push functions
+            document.write("<h2>Pop & Push Function </h2>");
+            document.write("arrays3 "+array3+"</br>");
+            var array5= array3.pop();
+            document.write("arrays5 "+array5+"</br>");
+            document.write(array3+"</br>");
+            array3.push(["Hardhik",35]);
+            document.write(array3);
+            //Shift & Unshift Functions
+            document.write("<h2>Shift & Unshift Function </h2>");
+            document.write("before shift function for array2 "+array2+"</br>");
+            array2.shift();
+            document.write("shift function for array2 "+array2+"</br>");
+            console.log(array2);
+            array2[array2.length]="Aadhya";
+            console.log(array2);
+            array2.unshift("Mahi",55);
+            console.log("unshift "+array2);
+            delete array2[1];
+            console.log(array2);
+            //concatenation of Arrays
+           array2= array2.concat(array5);
+            document.write(array2);
+
+            //Dec 21st
+            //Splice - At position 2, add 2 elements:
+            //The splice() method adds and/or removes array elements.
+            //The splice() method overwrites the original array.
+            const fruits = ["Banana", "Orange","Apple","Mango"];
+            console.log("Fruits Before to Splice method call: "+ fruits);
+            fruits.splice(2,0,"Lemon","Kiwi","Papaya");
+            console.log("Fruits After making Splice method call: "+ fruits);
+
+            //Splice - At position 2, remove 2 items:
+            fruits.splice(2, 2);
+            console.log("Fruits After making Splice method call: "+ fruits);
+
+            //Slice -  Select elements: 
+            //The slice() method returns selected elements in an array, as a new array.
+            //The slice() method does not change the original array.
+
+            var fruitsArray = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+            console.log("Fruits Before to Slice method call: "+ fruitsArray);
+            var citrus = fruitsArray.slice(1, 4);
+            console.log("Fruits After making Slice method call - slice Var : "+ citrus);
+            console.log("Fruits After making Slice method call:- Actual Array: "+ fruitsArray);
+
+            //Slice - Select elements using negative values:
+            var myBest = fruitsArray.slice(-3, -1);
+            console.log("Fruits After making Slice call With Negative Values: new Var: "+ myBest);
+
+            //Array sort() :
+            //The sort() sorts the elements of an array.
+            //The sort() overwrites the original array.
+            //The sort() sorts the elements as strings in alphabetical and ascending order.
+            const fruitsArr = ["Banana", "Orange", "Apple", "Mango"];
+            console.log("Before Sort :"+ fruitsArr);
+            fruitsArr.sort();
+            console.log("After Sort :"+ fruitsArr);
+
+            //Number sort?
+            let numberSortList = [400,300,300,500,600];
+            console.log("Before sort() call :"+ numberSortList);
+            numberSortList.sort(function(a,b){return a-b});
+            console.log("After sort() call :"+ numberSortList);
+
+            //The reverse() method reverses the order of the elements in an array.
+            //The reverse() method overwrites the original array.
+            let fruitsList = ["Banana", "Orange", "Apple", "Mango"];
+            console.log("Before reverse() call :"+ fruitsList);
+            fruitsList.reverse();
+            console.log("After reverse() call :"+ fruitsList);
+
+            let numberList = [200,-1,300,-600,1000];
+            console.log("Before reverse() call :"+ numberList);
+            numberList.reverse(numberList);
+            console.log("After reverse() call :"+ numberList);
+
+            //forEach
+            //The forEach() method calls a function for each element in an array.
+            //The forEach() method is not executed for empty elements.
+            let text = "";
+            const fruitsForEach = ["apple", "orange", "cherry"];
+            fruitsForEach.forEach(myFunction1);
+            document.getElementById("foreach").innerHTML = text;
+            function myFunction1(item, index) {
+                text += index + ": " + item + "<br>"; 
+                console.log("item "+item+" index "+index);
+            }
+
+            //map() creates a new array from calling a function for every array element.
+            //map() calls a function once for each element in an array.           
+            //map() does not execute the function for empty elements.
+            //map() does not change the original array.         
+            const numbers = [4, 9, 16, 25];
+            const newArr = numbers.map(Math.sqrt)
+            console.log("newArr "+ newArr);
+
+            const numbers1 = [65, 44, 12, 4];
+            console.log("before map newArr1 call "+ numbers1);
+            const newArr1 = numbers1.map(myFunction)
+            console.log("after map newArr1 call "+ newArr1);
+            
+            function myFunction(num) {
+                return num * 10;
+            }
+
+            //find method
+            //The find() method returns the value of the first element that passes a test.
+            // The find() method executes a function for each array element.
+            //The find() method returns undefined if no elements are found.
+            //The find() method does not execute the function for empty elements.
+            //The find() method does not change the original array.
+            
+            const ages = [3, 10, 18, 20];
+            
+            function checkAge(age) {
+              return age > 18;
+            }
+            console.log("find age>18 is  "+  ages.find(checkAge));
+            
+            
+            const agesInd = [3, 10, 18, 20];          
+            console.log("findIndex method call "+  agesInd.findIndex(checkAge));
+           
+
+            //Reduce
+            //The reduce() method executes a reducer function for array element.
+            //The reduce() method returns a single value: the function's accumulated result.
+            //The reduce() method does not execute the function for empty array elements.
+            //The reduce() method does not change the original array.
+
+            const numbersRedList = [175, 50, 25];
+            console.log("Reduce call: " + numbersRedList.reduce(myFunc));
+            function myFunc(total, num) {
+                console.log("total :" + total + " Num "+num);
+                return total - num;
+            }
+
+            //Reduce Right
+            //The reduceRight() method executes a reducer function for each array element.
+            //The reduceRight() method works from right to left.
+            //The reduceRight() method returns a single value: the function's accumulated result.
+            //The reduceRight() method does not execute the function for empty elements.
+            const reduceRightNums = [175, 50, 25];
+            console.log("reduce rt numbers:"+reduceRightNums.reduceRight(myFunc));
+            function myFunc(total, num) {
+                console.log("total rediuce rt :" + total + " Num reduce rt "+num);
+                return total - num;
+            }
+
+            //some()
+            //The some() method checks if any array elements pass a test (provided as a callback function).
+            //The some() method executes the callback function once for each array element.
+            //The some() method returns true (and stops) if the function returns true for one of the array elements.
+            //The some() method returns false if the function returns false for all of the array elements.
+            //The some() method does not execute the function for empty array elements.
+            //The some() method does not change the original array.
+
+            const agesSome = [3, 10, 18, 20];
+            console.log("Array some() method check : " +agesSome.some(checkAdult));
+            function checkAdult(age) {
+                return age > 18;
+            }   
+
+            //The every() method executes a function for each array element.
+            //The every() method returns true if the function returns true for all elements.
+            //The every() method returns false if the function returns false for one element.
+            //The every() method does not execute the function for empty elements.
+            //The every() method does not change the original array
+
+            const agesEvery = [32, 33, 16, 40];
+            console.log("Array every() method check : " + agesEvery.every(checkAdult));
+           
+            //indexof()
+            //The indexOf() method returns the first index (position) of a specified value.
+            //The indexOf() method returns -1 if the value is not found.
+            //The indexOf() method starts at a specified index and searches from left to right.
+            //By default the search starts at the first element and ends at the last.
+            //Negative start values counts from the last element (but still searches from left to right).
+
+            const indexFruits = ["Banana", "Orange", "Apple", "Mango"];
+            let index = indexFruits.indexOf("Apple");
+            console.log("indexOf() method check: "+index);
+            let index1 = indexFruits.indexOf("Apple", 3);
+            console.log("indexOf(value,index) method check: "+index1);
+
+
+            //The lastIndexOf() method returns the last index (position) of a specified value.
+            //The lastIndexOf() method returns -1 if the value is not found.
+            //The lastIndexOf() starts at a specified index and searches from right to left.
+            const lastIndexFruits = ["Apple", "Orange", "Apple", "Mango"];
+            let index3 = lastIndexFruits.lastIndexOf("Apple");
+            console.log("lastIndexOf(value) method check: "+index3);
+
+            //Keys
+            //The keys() method returns an Array Iterator object with the keys of an array.
+            //The keys() method does not change the original array.
+            document.write("<h2>Keys & Entries Function </h2>");
+            const fruitsKeys = ["Banana", "Orange", "Apple", "Mango"];
+            const keys = fruitsKeys.keys();
+            let text1 = "";
+            for (let x of keys) {
+                text1 += x + "<br>";
+                console.log("For Each iteration:<br> "+ text1);
+                document.write("For Each iteration:<br> "+ text1);
+            }
+            console.log("After full iteration:<br> "+ text1);
+            document.write("After full iteration:<br> "+ text1);
+
+            
+            const keys1 = Object.keys(fruitsKeys);
+            let text2 = "";
+            for (let x of keys1) {
+                text2 += x + "<br>";
+            }
+            console.log("After full 2nd iteration:<br> "+ text2);
+
+            //Entries
+
+            //Create an Array Iterator, and then iterate over the key/value pairs:
+            // The entries() method does not change the original array.
+
+            const fruitsEntry = ["Banana", "Orange", "Apple", "Mango"];
+            const f = fruitsEntry.entries();
+            
+            for (let x of f) {
+                document.write("<br> For Each iteration: x: "+ x +" f: "+f);
+                console.log("For Each iteration: x: "+ x +" f: "+f);
+            }
+            
+            document.write("<br> After iteration: f: "+f);
+            console.log("For Each iteration: x:  f: "+f);
+
+
+        </script>
+    </body>
+</html>

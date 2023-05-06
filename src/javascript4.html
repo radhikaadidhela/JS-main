@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<head>
+    <title> Conditional and Loops </title>
+</head>
+<body>
+    <h2> Conditional statements</h2>
+    <p id="myif"></p>
+    <p id="mydate"></p>
+    <p id="today"></p>
+    <p id="abc" style=color:red>This before function call</p>
+
+    <p id="funreturn" style=color:green>Function Return Value will be updated</p>
+
+    <h3 id="date" style="font-style:italic;color:olive"></h3>
+    <h3 id="date1" style="font-style:oblique;color:rgb(226, 43, 101)"></h3>
+   <!-- Numbers -->
+   <h2 style="color:blueviolet;font-style:oblique">Number Functions</h2>
+   <h3 id="numId" style="color:blueviolet;font-style:oblique"></h3>
+   <p id="number" style="color:blueviolet;font-style:oblique"></p>
+
+
+   <!-- Math Functions -->
+   <h2 style="color:rgb(171, 226, 43);font-style:oblique">Math Functions</h2>
+   <h3 id="mathId" style="color:rgb(171, 226, 43);font-style:oblique"></h3>
+   <p id="math" style="color:rgb(171, 226, 43);font-style:oblique"></p>
+   <!-- Boolean and String functions -->
+    <h2 style="color:rgb(226, 43, 122);font-style:oblique"></h2>
+    <p id="boolean" style="color:rgb(226, 43, 122);font-style:oblique"></p>
+    <p id="string" style="color:rgb(226, 43, 122);font-style:oblique"></p>
+    <script>
+        var a="20";
+        var b=20;
+        //If Test
+        if((a===b)&&(a==b)){
+            document.getElementById("myif").innerHTML="print the condition is true";
+        }else{
+            document.getElementById("myif").innerHTML="print the condition is false";
+        }
+
+        var date= new Date();
+        var day= date.getDay();
+        document.getElementById("mydate").innerHTML="Today's date: "+ date;
+        document.getElementById("today").innerHTML="Today's day: "+ day;
+        //day=7;
+        //Switch Test
+        switch(day){
+            default:
+            document.write("default value");
+            break;
+            case 0:
+            document.write("Today is Sunday");
+            break;
+            case 1:
+            document.write("Today is monday");
+            break;
+            case 2:
+            document.write("Today is Tuesday");
+            break;
+            case 3:
+            document.write("Today is Wednesday");
+            break;
+            case 4:
+            document.write("Today is Thrusday");
+            break;
+            case 5:
+            document.write("Today is Friday");
+            break;
+            case 6:
+            document.write("Today is Saturday");
+            break;
+        }
+    //For Loop
+    document.write("<h1>For loop</h1>");
+    var c;
+    for(c=0;c<=10;c++){
+        document.write("</br>"+c);
+    
+    }
+    
+
+    //While
+    document.write("<h1>While loop</h1>");
+    var d=1;
+    while(d<=6){
+        document.write("</br>"+d);
+        d++;
+    }
+
+    //do while
+    document.write("<h1>do while loop</h1>");
+    var e=1;
+    do{
+       document.write("</br>"+e);
+       e++; 
+    }while(e<=5)
+
+    //function
+    document.write("<h2> Writing functions in different ways</h2>");
+    function basicFunc(){
+        var v="Basic functions after function update";
+        //v+= document.getElementById("abc").value;
+        v+=" Radhika";
+        document.getElementById("abc").innerHTML=v;
+       
+       
+    }
+    basicFunc();
+
+    //function with multiple params/args
+
+    function func1(para1,para2){
+        var a=para1;
+        var b=para2;
+        document.write("sum of a & b = "+(a+b));
+        return a+b;
+
+    }
+   
+    document.write(" function return test: "+  func1(20,389));
+
+    var c = func1(20,389);
+    console.log(c);
+    document.write(" Radh Result " +c);
+
+    var d=func1(48,3456);
+    document.getElementById("funreturn").innerHTML=d;
+    
+
+
+    //function with return type and loops
+    document.write("<h3>Multiplication Function</h3>");
+    function func2(para1){
+        var i;
+        for(i=1;i<=10;i++){
+            document.write("</br>"+para1+ " X   " + i+ "   =  " + (para1*i));
+        }
+
+    }
+
+    func2(7);
+
+
+    //Date
+
+    document.write("<h3>Date functions</h3>");
+    function func3(){
+        var mydate=new Date();
+        var day=mydate.getDay();
+        var ms=mydate.getMilliseconds();
+        var s=mydate.getSeconds();
+        var h=mydate.getHours();
+        var m=mydate.getMonth();
+        var y=mydate.getFullYear();
+        document.getElementById("date").innerHTML=mydate+" Day: "+day+" Millisecond: "+ms+" Seconds: "+s+" Hours: "+h+" Month: "+m+" Full Year: "+y;
+
+         //Set Date
+         var mydate1=new Date();
+         mydate1.setFullYear(2008,7,15);
+         document.getElementById("date1").innerHTML="Todays Date : "+ mydate1+ " After Set full year: " +mydate1.getFullYear();
+
+
+        
+    }
+    func3();
+
+    function numfunc(){
+        var num="abc";
+        var num1=Number(67);
+        var num2= new Number(676);
+        document.getElementById("numId").innerHTML="the value of the number = "+num+" , " +num1+ " , " +num2;
+       // document.getElementById("number").innerHTML="String value for num2: = "+num2.toString();
+
+        /*if(isNaN(num2)){
+            document.getElementById("number").innerHTML="true";
+        }else{
+            document.getElementById("number").innerHTML="false";
+        }*/
+
+        if(isNaN(num)){
+            document.getElementById("number").innerHTML="true";
+        }else{
+            document.getElementById("number").innerHTML="false";
+        }
+    }
+
+    numfunc();
+
+    function mathfunc(){
+       
+        document.getElementById("math").innerHTML="The value of Math PI = "+Math.PI;
+        document.getElementById("mathId").innerHTML="The value of Math functions = "+Math.pow(5,6)+"</br> square root "
+        +Math.sqrt(778)+"</br> Absolute = "+Math.abs(-7887)+"</br> Floor = "+Math.floor(65677.76)+"</br> Ceil = "
+        +Math.ceil(3343.12)+"</br> Min = "+Math.min(43,32,-789,2354)+"</br> Max = "+Math.max(35,6576,-68,245446)
+        +"</br> Math Round = "+Math.round(23543.46);
+        
+    }
+
+    mathfunc();
+    function booStfunc(){
+        var bool=false;
+        var bool1=Boolean(true);
+        var bool2=new Boolean(true);
+        
+        var str="Hello";
+        var str1=String("This is String variable");
+        var str2=new String(`This is String function.This is in the form of object`);
+        document.getElementById("boolean").innerHTML=bool+" , "+bool1+" , "+bool2;
+        document.getElementById("string").innerHTML=str+" , "+str1+" , "+str2;
+
+        if(bool){
+            document.getElementById("boolean").innerHTML=bool+" , "+bool1+" , "+bool2+" , mah";
+        }else
+        {
+            document.getElementById("boolean").innerHTML=bool+" , "+bool1+" , "+bool2+" , rad";
+        }
+
+        console.log(bool2);
+
+        if(bool2.valueOf()){
+            document.getElementById("boolean").innerHTML=bool+" , "+bool1+" , "+bool2+" , mah";
+            console.log(bool2.valueOf());
+        }else
+        {
+            document.getElementById("boolean").innerHTML=bool+" , "+bool1+" , "+bool2+" , rad";
+        }
+
+        //String Methods
+        var teststr="dtyfyhgjhkchgjk";
+        var length=teststr.length;
+        document.write("The length of string "+length);
+        var result=teststr.slice(10,15);
+        document.write("</br>The result of slice "+result);
+        var result1=teststr.substring(-9,2);
+        document.write("</br>The result of the string through substring method "+result1);
+        var result2=teststr.substr(2,6);
+        document.write("</br> The result of the string through substr method "+result2);
+        var string1="Hello welcome to the world of javascript";
+        document.write("The string before the replace "+string1);
+        var replace=string1.replace("Hello","Hi");
+        document.write("</br> The result after replace "+replace);
+        var upper=string1.toUpperCase();
+        console.log("</br>The conversation of string to upper case "+upper);
+        var lower=string1.toLowerCase;
+        console.log("</br>The conversation of string to lower case "+lower);
+        var concat=teststr.concat(" ",string1);
+        console.log("</br>The concat result of two strings "+concat);
+        var padStart=teststr.padStart(20,10);
+        document.write("</br>The padstart result "+padStart);
+        var padEnd=teststr.padEnd(20,10);
+        document.write("</br>The padstart result "+padEnd);
+        var char=teststr.charAt(6);
+        document.write("</br> The char position value "+char);
+        var char2=teststr.charCodeAt(6);
+        document.write("</br> The char code position value "+char2);
+        
+        //String Index of       
+        document.write("<h3>String methods</h3>");
+        var str3=new String("This is String function. This is in the form of object");
+        var strIndex=str3.indexOf("This");
+        document.write("</br> The string index of "+strIndex);
+        var strLast=str3.lastIndexOf("This");
+        document.write("</br> The last index of the string is "+strLast);
+        var strSearch=str3.search(/this/ig);
+        document.write("</br> The search method of string is "+strSearch);
+        var strMatch=str3.match(/This/ig);
+        document.write("<br> The match method of the string is "+strMatch);
+        var strInc=str3.includes("This");
+        document.write("<br> The includes method of the string is "+strInc);
+        var strInc=str3.startsWith("This");
+        document.write("<br> The startsWith method of the string is "+strInc);
+        var strInc=str3.endsWith("This");
+        document.write("<br> The Ends with method of the string is "+strInc);
+
+        document.write("<h3>Template Literals, Back Tics Syntax, Multi Line Strings </h3>");
+        var html="HTML";
+        var bootStrap="Boot Strap";
+        var ang="Angular";
+        let myStr=`Welcome to Java Script`;
+        document.write(myStr);
+
+        let multiStr=`Welcome to Java script ${html} 
+        ,${bootStrap} and ${ang}`;
+        document.write(multiStr);
+        let z=26;
+        let y=78;
+        document.write(`</br> The product multiplication of ${z} and ${y} is : ${z*y} </br>`);
+
+        var strVal=new String("Radhika");
+        document.write(strVal);
+        console.log(strVal);
+        var primiText= strVal.valueOf(strVal);
+        document.write("</br>"+primiText);
+        console.log(primiText);
+
+        var repeatText = "The world is so big the horizon is not the end";
+        var repeatText2= repeatText.repeat(2);
+        document.write("</br>"+repeatText2);
+
+        
+        document.write("</br>"+String.fromCharCode(76,78,90));
+    }
+    
+    booStfunc();
+   
+    
+
+    </script>
+
+    
+</body>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javasript Operators</title>   
+</head>
+<body>
+    <h1>Java script Operators </h1>
+
+    <script>
+
+       //Arithemetic Operators
+       document.write("<h1>Arithmetic Operators</h1>");  
+       let a = 10;
+       let b = 10;
+       document.write("Addition of "+a+ " and " +b + " is :" + (a+b));
+       document.write("</br> Substraction of "+a+" and "+b+" is ="+(a-b) );
+       document.write("</br> Multiplication of "+a+" and "+b+" is = " +(a*b) );
+       document.write("</br> Division of "+a+" and "+b+" is ="+(a/b) );
+       document.write("</br> Module of "+a+" and "+b+" is ="+(a%b) );
+      
+       //Comparison Operators
+       var c=10;
+       var d=20;
+       document.write("<h1>Comparision Operators</h1>");  
+       document.write("</br> Checking Assignment operator for : " +(c=d));   
+       document.write("</br> Checking Comparison operator  : " +(c==d));
+       document.write("</br> Checking Comparison operator for identical  : " +(c===d));
+       document.write("</br> Checking Comparison operator  : " +(c!=d));
+       document.write("</br> Checking Comparison operator for : " +(c!==d));
+       document.write("</br> Checking Comparison operator  : " +(c<d));
+       document.write("</br> Checking Comparison operator  : " +(c>d));
+       document.write("</br> Checking Comparison operator  : " +(c<=d));
+       document.write("</br> Checking Comparison operator  : " +(c>=d));
+
+       //Assignment Operators
+       document.write("<h1>Assignment Operators</h1>");
+       var e = 10;
+       var f = 30; 
+       document.write("</br> Checking Assignment operator  : " +(e+=f));    //10+30=40
+       document.write("</br> Checking Assignment operator  : " +(e-=f));    //40-30
+       document.write("</br> Checking Assignment operator  : " +(e*=f));    //10*30
+       document.write("</br> Checking Assignment operator  : " +(e/=f));    //300/30
+       document.write("</br> Checking Assignment operator  : " +(e%=f));    // 10%30
+       
+
+       //Logical Operators
+
+       document.write("<h1>Logical Operators</h1>");
+       var g = 10;
+       var h = "10"; 
+       var i = 10;
+
+       if((g==h)&& (g===h)){
+        document.write("</br> In First If statement "); 
+       }
+       else{
+        document.write(" </br> In First else statement ");
+       }
+
+       if((g==h) && (g===i)){
+        document.write("</br> In Second If statement "); 
+       }
+       else{
+        document.write("</br> In Second else statement ");
+       }
+       
+       if((g==h)|| (g===h)){
+        document.write("</br> In Third  If statement "); 
+       }
+       else{
+        document.write("</br> In Third else statement ");
+       }
+
+       if(!(g==i)){
+        document.write("</br> In Fourth  If statement "); 
+       }
+       else{
+        document.write("</br> In Fourth else statement ");
+       }
+
+       //String Operators
+       document.write("<h1>String Operators</h1>");
+       let j = "This is String Concatenation Test for First String";
+       let k = " and Second string";
+       document.write("</br>"+ j+k);
+       document.write("</br>"+ (j+=k));
+       document.write("</br>"+ j);
+
+
+       //Increment, Decrement Operators
+       document.write("<h1>Increment,Decrement Operators</h1>");
+       let l=4;
+       document.write("</br> pre increment check:" + (++l) );  //5
+       document.write("</br> post increment check" + (l++) );  //5 but it will be 6 at post assignment
+       document.write("</br> pre decrement check" + (--l) );  //5 now 
+       document.write("</br> post decrement check" + (l++) );  //5
+       document.write("</br> Actual Value : " + (l) )
+
+
+    </script>
+</body>
+</html>

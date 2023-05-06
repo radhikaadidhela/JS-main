@@ -1,0 +1,23 @@
+h2{
+    text-decoration: none;
+    font-size: medium;
+    color: blueviolet;
+    font-style: oblique;
+}
+p{
+text-decoration: line-through;
+background-color: aqua;
+color: blue;
+font-style: italic;
+}
+.myparagraph{
+color: aqua;
+font-style: italic;
+font-size:20px;
+}
+#mypara{
+color: red;
+font-style:normal;
+font-size:15px;
+}
+

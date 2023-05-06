@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JQuery Effects</title>
+        <style>
+            #slide{
+                width:200px;
+                height:200px;
+                background-color: yellow;
+                position: relative;
+            }
+            #slide2{
+                width:200px;
+                height:200px;
+                background-color: yellow;
+                position: relative;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>JQuery Effects</h1>
+        <h2>JQuery Effects- show,hide,toggle</h2>
+        <div>
+            <h2 class="myId">Hide,Show,Toggle in Action h2 </h2>
+            <h3 class="hea3">Hide,Show,Toggle in Action with call back h3</h3>
+            <h2 id="callbackresult"></h2>
+            <button class="hideFunc">Hide</button>
+            <button class="showFunc">Show</button>
+            <button class="toggleFunc">Toggle</button>
+        </div>
+
+        <h2>JQuery Effects- fadeIn,fadeOut,fadeToggle,fadeTo</h2>
+        <div>
+            <h2 class="myFadeh2">fadeIn,fadeOut,fadeToggle,fadeTo in Action h2 </h2>
+            <h3 class="myfadeh3">fadeIn,fadeOut,fadeToggle,fadeTo in Action with call back h3</h3>
+            <h2 id="callbackresult"></h2>
+            <button class="fadeInFunc">Fade In</button>
+            <button class="fadeOutFunc">Fade Out</button>
+            <button class="fadeToggleFunc">Fade Toggle</button>
+            <button class="fadeToFunc">Fade To</button>
+        </div>
+
+        <h2>JQuery Effects- sildeDown,slideUp,slideToggle,stop</h2>
+        <div>
+            <h2 class="mySlideh2">sildeDown,slideUp,slideToggle,stop in Action h2 </h2>
+            <h3 class="mySildeh3">sildeDown,slideUp,slideToggle,stop in Action with call back h3</h3>
+            <h2 id="callbackresult"></h2>
+            <button class="sildeInFunc">Slide In</button>
+            <button class="slideOutFunc">Slide Out</button>
+            <button class="slideToggleFunc">Slide Toggle</button>
+            <button class="stopFunc">Stop</button>
+        </div>
+
+        <h2>JQuery Effects- Animate</h2>
+        <div>
+            <div id="slide">Slide 1</div>
+            <h2 id="callbackresult"></h2>
+            <button class="aniFunc">Animate</button>
+            <button class="aniFunc2">Animate 2</button>             
+        </div>
+
+        <h2>JQuery Effects- Chain methods</h2>
+        <div>
+            <div id="slide2">Slide Chain</div>
+            <h2 id="callbackresult"></h2>
+            <button class="aniFunc3">Animate</button>        
+        </div>
+
+        <h2>JQuery Get/set and attributes- Text,HTML,Val,Attr</h2>
+        <div>
+            <p id="myText">JQuery Get/set and attributes- Text,HTML,Val,Attr in Action h2 </p>
+            <p id="myHTML">JQuery Get/set and attributes- <b>Text,HTML,Val,Attr in Action h2</b> </p>
+            <p id="myVal">JQuery Get/set and attributes- <b>Text,HTML,Val,Attr in Action h2</b> </p>
+            <button id="tGetClick">Get Text</button>
+            <button id="tSetClick">Set Text</button>
+            <button id="tGetHTMLClick">Get HTML</button>
+            <button id="tSetHTMLClick">Set HTML</button>
+
+            <button id="tGetValClick">Get Val</button>
+            <button id="tSetValClick">Set Val</button>
+            
+        </div>
+
+        <div>
+            <p id="myText">JQuery Get/set and attributes- Text,HTML,Val,Attr in Action h2 </p>
+            <p id="myHTML">JQuery Get/set and attributes- <b>Text,HTML,Val,Attr in Action h2</b> </p>
+            <button id="tGetClick">Get Text</button>
+            <button id="tSetClick">Set Text</button>
+            <button id="tGetHTMLClick">Get HTML</button>
+            <button id="tSetHTMLClick">Set HTML</button>
+
+            <a href="https://google.com" id="link">Link Attribute  <a/>
+                <button id="myAttr">Attribute</button>
+            
+        </div>
+
+       
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        
+        <script>
+            $(document).ready(function(){
+              
+                //JQuery Effects - show,hide,toggle
+                $("button.hideFunc").click(function(){ 
+                    $("h2.myId").hide();                  
+                    $("h3.hea3").hide(2000,myfun);
+                });
+                $("button.showFunc").click(function(){  
+                    $("h2.myId").show();                 
+                    $("h3.hea3").show(2000,myfun);
+                });
+                $("button.toggleFunc").click(function(){ 
+                    $("h2.myId").toggle();                    
+                    $("h3.hea3").toggle(2000,myfun);
+                });
+
+                //JQuery Fading Effects - fadeIn,fadeOut,fadeToggle,fadeTo
+                $("button.fadeInFunc").click(function(){ 
+                    $("h2.myFadeh2").fadeIn();                  
+                    $("h3.myfadeh3").fadeIn("slow",myfun);
+                });
+                $("button.fadeOutFunc").click(function(){  
+                    $("h2.myFadeh2").fadeOut();                 
+                    $("h3.myfadeh3").fadeOut("fast",myfun);
+                });
+                $("button.fadeToggleFunc").click(function(){ 
+                    $("h2.myFadeh2").fadeToggle();                    
+                    $("h3.myfadeh3").fadeToggle(2000,myfun);
+                });
+                
+                $("button.fadeToFunc").click(function(){ 
+                    $("h2.myFadeh2").fadeTo();                    
+                    $("h3.myfadeh3").fadeTo(2000,0.15);
+                });
+
+                //Jquery Sliding Effects - sildeDown,slideUp,slideToggle,stop
+                $("button.sildeInFunc").click(function(){ 
+                    $("h2.mySlideh2").slideDown();                  
+                    $("h3.mySildeh3").slideDown(4000,myfun);
+                });
+                $("button.slideOutFunc").click(function(){  
+                    $("h2.mySlideh2").slideUp();                 
+                    $("h3.mySildeh3").slideUp(4000,myfun);
+                });
+                $("button.slideToggleFunc").click(function(){ 
+                    $("h2.mySlideh2").slideToggle();                    
+                    $("h3.mySildeh3").slideToggle(4000,myfun);
+                });
+                $("button.stopFunc").click(function(){ 
+                    $("h2.mySlideh2").stop();                    
+                    $("h3.mySildeh3").stop();
+                });
+
+                //JQuey - animate
+                $("button.aniFunc").click(function(){ 
+                    $("#slide").animate({left:"300px"},4000,myfun);                  
+                });
+                $("button.aniFunc2").click(function(){ 
+                    $("#slide").animate({left:"0px"},4000,myfun);                  
+                });
+
+                //JQuery -  Chain methods
+                $("button.aniFunc3").click(function(){ 
+                    $("#slide2").css({backgroundColor:"red",color:"#FFF"}).animate({left:"300px"},3000).animate({left:"0px"},4000);                
+                });
+
+                //JQuery get/set content and attributes
+                //text()
+                $("#tGetClick").click(function(){
+                    alert("Get text : "+ $("#myText").text());
+                })
+                $("#tSetClick").click(function(){
+                    $("#myText").text("This is the Updated text");
+                })
+                //html()
+                $("#tGetHTMLClick").click(function(){
+                    alert("Get HTML : "+ $("#myHTML").html());
+                })
+                $("#tSetHTMLClick").click(function(){
+                    $("#myHTML").html("This is the Updated HTML <b>Mahipal </b>");
+                })
+                //val()
+
+                $("#tGetValClick").click(function(){
+                    alert("Get Val : "+ $("#myVal").val());
+                })
+                $("#tSetValClick").click(function(){
+                    $("#myVal").val("This is the Updated Vl <b>Mahipal </b>");
+                })
+
+                //attr
+                $("#myAttr").click(function(){
+                    alert("test"+$("#link").attr("value"));
+                });
+            })
+
+            function myfun(){
+                document.getElementById("callbackresult").innerHTML="Updating at Calback result h2 using callback method";
+            }
+            
+        </script>    
+    </body>
+</html>        

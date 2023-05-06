@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Regex</title>
+    </head>
+    <body>
+        <h3>REGEX - Regular Expressions</h3>
+        <h3>String Search</h3>
+        <script>
+            let myStr="Welcome to Regular Javascript expressions";
+            let mySearch0=myStr.search(/Javascript/);
+            let mySearch=myStr.search(/javascript/i);
+            let myReplace=myStr.replace(/javascript/i,"HTML, CSS, Javascript");
+            console.log(mySearch0);
+            console.log(mySearch);
+            console.log(myReplace);
+
+            let myRes0 = myStr.match(/Javascript/);
+            let myRes1 = myStr.match(/Javascript/im);
+            let myRes2 = myStr.match(/Javascript/im);
+            let myRes3 = myStr.match(/[a]/g);
+            let myRes4 = myStr.match(/[0-9][a-z]/g);
+            let myRes = myStr.match(/z+/ig);
+            let myResAny = myStr.match(/o*/ig);
+            let myResAnyq = myStr.match(/o?/ig);
+            console.log(myRes0);
+            console.log(myRes1);
+            console.log(myRes2);
+            console.log(myRes3);
+            console.log(myRes4);
+            console.log(myRes);
+            console.log(myResAny);
+            console.log(myResAnyq);
+
+            let myStr33="Welcome 2 Java script";
+            let myma=myStr33.match(/\d/);
+            let myma1=myStr33.match(/\u0057/g);
+            console.log(myma);
+            console.log(myma1);
+        </script>
+    </body>
+</html>

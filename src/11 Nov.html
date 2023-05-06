@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML Input Types</title>
+    </head>
+    <body>
+        <h2>Form Type Examples</h2>
+        <form action="/test.php">
+            <div>
+            Name <input type="text" name="name" value="" placeholder="Enter your name">
+        </div>
+        <div>
+            Password <input type="password" name="password" value="" placeholder="Enter your password" required>
+        </div>
+        <div>
+            <label>Choose Your Gender </label>
+                <input type="radio" name="gender" value="Male">Male
+                <input type="radio" name="gender" value="Female">Female
+                <input type="radio" name="gender" value="Others" disabled>Others
+            </div>
+            <div>
+            <label> Choose Your Hobbies </label>
+            <input type="checkbox" name="Hobby1" value="Music">Music 
+            <input type="checkbox" name="Hobby2" value="Games">Games
+            <input type="checkbox" name="Hobby3" value="Reading">Reading
+        </div>
+        <div>
+          <label> Enter your Phone number</label>  
+          <input type="number" name="Phone number" placeholder="Enter your phone number" min="1" max="20"><br>
+          Telephone: <input type="tel" name="telephone" placeholder="Enter your telephone"><br>
+          Range: <input type="range" min="1" max="15" value="5">
+        </div>
+       
+        <div>
+            <label> Enter your URL</label> 
+            <input type="url" value="https://www.gmail.com" placeholder="Enter your url" readonly> <br>
+            Email: <input type="email" value="" placeholder="Enter your email"><br>
+            Search: <input type="search" value="" placeholder="Enter your Search"><br>
+        </div>
+        <div>
+            <label>Enter your date and time examples</label>
+        </div>
+        <div>
+            Date: <input  type="date"> <br>
+            
+            Date Time Local: <input type="datetime-local"><br>
+            Time: <input type="time"><br>
+            Month: <input type="month"><br>
+            Week: <input type="week"><br>
+            <div>
+              Color: <input type="color">
+            </div>
+        </div>
+        <div>
+            Choose File: <input type="file" value=""/><br>
+            Image: <input type="image" value="test.jpg"/>
+        </div>
+        <div></div>
+
+        <div>
+            <input type="submit" value="Save"/>
+            <input type="reset" value="reset">
+            <input type="button" value="Button"/>
+        </div>
+        </form>
+    </body>
+</html>         

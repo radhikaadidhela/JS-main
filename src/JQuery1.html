@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JQuery</title>
+    </head>
+    <body>
+       
+        <h3>JQuery Examples</h3>
+        <span> Paragraph Hide Scenario</span>
+        <p class="test">Test class Paragraph</p>
+        <p id="test">Test ID Paragraph</p>
+        <button>HIDE</button>
+        <p class="ptag"> p tag element</p>
+
+        
+       
+        <div class="divfirst"> div tag first element</div>
+        <div class="divsecond"> div tag second element</div>   
+        <h3 class="h3doubleclick"> DoubleClick Function event</div> 
+        <h3 class="mouseenter"> DoubleClick Function event</div>  
+        <br>    
+        <button class="keypressb">Key Press</button>   
+        <br> 
+        <div>
+            <input type="text" name="name" placeholder="ENTER ANY NAME">
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script>
+            $("span").hide();
+            $(".test").hide();
+            $("#test").hide();
+
+            $(document).ready(function(){
+                //JQuery SELECTORS
+                $("button").click(function(){                   
+                    $(".ptag").hide();
+                    //first or second div
+                    $("div:first").hide();
+                    //div with class
+                    $("div.divsecond").hide();
+                });
+                
+                //JQuery Events- MouseEvents(click,dblclick,mouseenter,mouseleave), 
+                //Form Events(submit, change,focus,blur),Keyboard Events(keypress,keydown,keyup),
+                //Document/Window Events(load,resize,scroll,unload)
+
+                $("h3.h3doubleclick").dblclick(function(){
+                    $("h3.h3doubleclick").hide();
+                });
+
+                $("h3.mouseenter").mouseenter(function(){
+                    $("h3.mouseenter").hide();
+                });
+                $("button.keypressb").keypress(function(){
+                    $("button.keypressb").hide();
+                });
+
+                $("input").keydown(function(){
+                    alert('INPUT KEY DOWN alert');
+                }); 
+
+            })
+        </script>
+
+        
+    </body>
+</html>    
